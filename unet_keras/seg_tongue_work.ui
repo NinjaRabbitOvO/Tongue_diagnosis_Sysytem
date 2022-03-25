@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1592</width>
+    <height>911</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>欢迎来到智能舌诊系统！</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-image:url(F:/PythonWorkspace/unet_keras/back2.jpg)</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="loadtongue">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>420</y>
+      <width>180</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">	border:1px solid #717171;
+	border-radius:5px;
+	background-color:rgb(160, 255, 174)
+</string>
+    </property>
+    <property name="text">
+     <string>上传舌象</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="uesr_tongue">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>10</y>
+      <width>400</width>
+      <height>400</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+
+	border:1px solid #717171;
+	border-radius:5px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="segtongue">
+    <property name="geometry">
+     <rect>
+      <x>1190</x>
+      <y>420</y>
+      <width>180</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">	border:1px solid #717171;
+	border-radius:5px;
+	background-color:rgb(160, 255, 174)
+</string>
+    </property>
+    <property name="text">
+     <string>舌体分割</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="segoutput">
+    <property name="geometry">
+     <rect>
+      <x>1080</x>
+      <y>10</y>
+      <width>400</width>
+      <height>400</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">	border:1px solid #717171;
+	border-radius:5px;
+	background-color:rgb(160, 255, 174)
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="tongue_colorButton">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>480</y>
+      <width>141</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:1px solid #717171;
+	border-radius:5px;
+background-image:url(F:/PythonWorkspace/unet_keras/back2.jpg)</string>
+    </property>
+    <property name="text">
+     <string>舌色分析</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="tai_colorButton">
+    <property name="geometry">
+     <rect>
+      <x>81</x>
+      <y>560</y>
+      <width>141</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">	
+	border:1px solid #717171;
+	border-radius:5px;</string>
+    </property>
+    <property name="text">
+     <string>苔色分析</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="tongue_shapeButton">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>640</y>
+      <width>141</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">	
+	border:1px solid #717171;
+	border-radius:5px;
+</string>
+    </property>
+    <property name="text">
+     <string>胖瘦舌分析</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="suggestionBtn">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>480</y>
+      <width>161</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">	border:1px solid #717171;
+	border-radius:5px;
+	background-color:rgb(160, 255, 174)
+</string>
+    </property>
+    <property name="text">
+     <string>初步诊断</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="tongue_color">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>480</y>
+      <width>231</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">	border:1px solid #717171;
+	border-radius:5px;
+	background-color:rgb(160, 255, 174)
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="tai_color">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>560</y>
+      <width>231</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">	border:1px solid #717171;
+	border-radius:5px;
+	background-color:rgb(160, 255, 174)
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="tongue_shape">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>640</y>
+      <width>231</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">	border:1px solid #717171;
+	border-radius:5px;
+	background-color:rgb(160, 255, 174)
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="tongue_shapeButton2">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>720</y>
+      <width>141</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">	border:1px solid #717171;
+	border-radius:5px;
+	background-color:rgb(160, 255, 174)
+</string>
+    </property>
+    <property name="text">
+     <string>裂纹舌分析</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="tongue_shape2">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>720</y>
+      <width>231</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">	border:1px solid #717171;
+	border-radius:5px;
+	background-color:rgb(160, 255, 174)
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="tongue_shapeButton3">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>800</y>
+      <width>141</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">	border:1px solid #717171;
+	border-radius:5px;
+	background-color:rgb(160, 255, 174)
+</string>
+    </property>
+    <property name="text">
+     <string>齿痕舌分析</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="tongue_shape3">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>800</y>
+      <width>231</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">	border:1px solid #717171;
+	border-radius:5px;
+	background-color:rgb(160, 255, 174)
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="tongue_recognition">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>10</y>
+      <width>400</width>
+      <height>400</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">	border:1px solid #717171;
+	border-radius:5px;
+	background-color:rgb(160, 255, 174)
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="tongue_recoButton">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>420</y>
+      <width>180</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">	border:1px solid #717171;
+	border-radius:5px;
+	background-color:rgb(160, 255, 174)
+</string>
+    </property>
+    <property name="text">
+     <string>舌象检测</string>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="sugtext">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>520</y>
+      <width>401</width>
+      <height>331</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:1px solid #717171;
+	border-radius:5px;
+background-image:url(F:/PythonWorkspace/unet_keras/back2.jpg);</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="esophagus_btn">
+    <property name="geometry">
+     <rect>
+      <x>1080</x>
+      <y>480</y>
+      <width>171</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:1px solid #717171;
+	border-radius:5px;</string>
+    </property>
+    <property name="text">
+     <string>食管癌诊断</string>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="esophagus_sug">
+    <property name="geometry">
+     <rect>
+      <x>1080</x>
+      <y>520</y>
+      <width>401</width>
+      <height>331</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border:1px solid #717171;
+	border-radius:5px;
+</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="back_btn">
+    <property name="geometry">
+     <rect>
+      <x>1510</x>
+      <y>840</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>返回</string>
+    </property>
+   </widget>
+   <zorder>uesr_tongue</zorder>
+   <zorder>loadtongue</zorder>
+   <zorder>segtongue</zorder>
+   <zorder>segoutput</zorder>
+   <zorder>tongue_colorButton</zorder>
+   <zorder>tai_colorButton</zorder>
+   <zorder>tongue_shapeButton</zorder>
+   <zorder>suggestionBtn</zorder>
+   <zorder>tongue_color</zorder>
+   <zorder>tai_color</zorder>
+   <zorder>tongue_shape</zorder>
+   <zorder>tongue_shapeButton2</zorder>
+   <zorder>tongue_shape2</zorder>
+   <zorder>tongue_shapeButton3</zorder>
+   <zorder>tongue_shape3</zorder>
+   <zorder>tongue_recognition</zorder>
+   <zorder>tongue_recoButton</zorder>
+   <zorder>sugtext</zorder>
+   <zorder>esophagus_btn</zorder>
+   <zorder>esophagus_sug</zorder>
+   <zorder>back_btn</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1592</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
